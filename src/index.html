@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API BE moment2</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/index.js" type="module" ></script>
+</head>
+<body>
+    <div class="container" id="episode-list-container">
+        <main>
+            <h1>Lägg till arbete</h1>
+
+            <form id="course-form" method="POST">
+                <label for="companyname">Företag:</label>
+                <br>
+                <input type="text" id="companyname" name="companyname">
+                <br>
+                <label for="jobtitle">Titel:</label>
+                <br>
+                <input type="text" id="jobtitle" name="jobtitle">
+                <br>
+                <label for="location">Plats:</label>
+                <br>
+                <input type="text" id="location" name="location">
+                <br>
+                <label for="startdate">Startdatum:</label>
+                <br>
+                <input type="text" id="startdate" name="startdate">
+                <br>       
+                <label for="enddate">Slutdatum:</label>
+                <br>
+                <input type="text" id="enddate" name="enddate">
+                <br> 
+                <label for="description">Beskrivning:</label>
+                <br>
+                <input type="text" id="description" name="description">
+                <br>
+                <input id="addBtn" type="submit" value="Lägg till">       
+            </form>
+        
+    <h1>CV</h1>   
+    <p id="add-episode-link"> <a href="./add.html">Lägg till nytt arbete</a></p> 
+    <p id="add-episode-link"> <a href="./about.html">Om uppgiften</a></p> 
+    <table class="episode-list" id="episode-list">
+        <thead>
+        <tr id="table-header">
+            <th>Företag</th>
+            <th>Titel</th>
+            <th>Plats</th>
+            <th>Startdatum</th>
+            <th>Slutdatum</th>
+            <th>Beskrivning</th>
+        </tr>      
+    </thead>
+       <tbody id="episode-lists"></tbody>
+  
+   
+
+</table>
+</main>
+</div>
+    
+</body>
+</html>
