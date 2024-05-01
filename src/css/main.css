@@ -4,6 +4,7 @@ body{
     background-color: #DAE2EF;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #DAE2EF;
+    font-size: small;
 }
 
 
@@ -59,10 +60,19 @@ main{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    color: #ffffff;
 }
 
 #add-episode-link:hover{
-    background-color: rgba(255, 212, 229, 0.4);
+    background-color: #ffffff;
+    color: #2D2A8D;
+
+}
+
+
+#add-episode-link:after{
+    font-style: italic;
+    color: #ffffff;
 }
 
 form{
@@ -70,6 +80,11 @@ form{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.deleteBtn{
+    background-color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @media screen and (max-width: 599px) {
@@ -85,7 +100,7 @@ form{
     .episode-list tr, .episode-list td{
         width: 20%;
         padding: 10px 5px;
-        font-size: smaller;
+        font-size: x-small;
     }
         
     form{
@@ -95,9 +110,9 @@ form{
 
 @media screen and (max-width: 499px) {
     .episode-list tr, .episode-list td{
-        width: 20%;
-        padding: 10px 5px;
-        font-size: x-small;
+        width: auto;
+        padding: 5px 2px;
+        font-size: xx-small;
     }
 }
 

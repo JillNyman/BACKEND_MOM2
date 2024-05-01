@@ -2,6 +2,7 @@ body {
   color: #dae2ef;
   background-color: #dae2ef;
   font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+  font-size: small;
 }
 
 .container {
@@ -46,6 +47,7 @@ main {
 
 #add-episode-link {
   text-align: center;
+  color: #fff;
   border: 2px solid #dae2ef;
   width: 80%;
   margin-left: auto;
@@ -56,7 +58,13 @@ main {
 }
 
 #add-episode-link:hover {
-  background-color: #ffd4e566;
+  color: #2d2a8d;
+  background-color: #fff;
+}
+
+#add-episode-link:after {
+  color: #fff;
+  font-style: italic;
 }
 
 form {
@@ -64,6 +72,11 @@ form {
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+.deleteBtn {
+  background-color: #fff;
+  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
 }
 
 @media screen and (width <= 599px) {
@@ -74,7 +87,7 @@ form {
   .episode-list tr, .episode-list td {
     width: 20%;
     padding: 10px 5px;
-    font-size: smaller;
+    font-size: x-small;
   }
 
   form {
@@ -84,9 +97,9 @@ form {
 
 @media screen and (width <= 499px) {
   .episode-list tr, .episode-list td {
-    width: 20%;
-    padding: 10px 5px;
-    font-size: x-small;
+    width: auto;
+    padding: 5px 2px;
+    font-size: xx-small;
   }
 }
 
