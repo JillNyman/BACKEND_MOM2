@@ -9,6 +9,7 @@ const inputEnddate = document.getElementById("enddate");
 const inputDescription = document.getElementById("description");
 const addBtn = document.getElementById("addBtn");
 const formEl = document.getElementById("course-form");
+const messageEl = document.getElementById("message");
 
 //Knapp: lägg till nytt arbete
 addBtn.addEventListener("click", addJob, false);
@@ -37,8 +38,20 @@ async function addJob(e){
         body: JSON.stringify(job)
     });
 
-    let data = await response.json();    
+    let data = await response.json();  
+    if(!response.ok){
+        messageEl.innerHTML = "Du måste fylla i fälten för <b>företagsnamn</b> och <b>titel</b>!";
+    }  
+    if(response.ok){
+    inputCompanyname.value = "";
+    inputJobtitle.value  = "";
+    inputLocation.value  = "";
+    inputStartdate.value  = "";
+   inputEnddate.value  = "";
+    inputDescription.value  = "";
+    messageEl.innerHTML = "Tillagd i listan!";
     return data;
+}
   
 }
     

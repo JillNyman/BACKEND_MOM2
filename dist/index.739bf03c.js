@@ -587,8 +587,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 "use strict";
 //Lista på arbeten
 const episodes = document.getElementById("episode-list");
+const messageEl = document.getElementById("message");
 getData();
-//Hämta list med arbeten från databas
+//Hämta lista med arbeten från databas
 async function getData() {
     const response = await fetch("http://127.0.0.1:2788/cv", {
         method: "GET",
@@ -602,6 +603,7 @@ async function getData() {
 }
 //Skriv ut listan
 function makeList(data) {
+    episodes.innerHTML = "";
     let datatwo = data;
     datatwo.forEach((dat)=>{
         let newEl = document.createElement("tbody");
@@ -636,8 +638,9 @@ async function deletePost(id) {
         }
     });
     let data = await response.json();
+    if (!response.ok) messageEl.innerHTML = "Lyckades inte h\xe4mta listan fr\xe5n databasen. Prova att uppdatera sidan.";
     console.log(data);
-    makeList(data);
+    getData();
 }
 
 },{}]},["l9Mez","ebWYT"], "ebWYT", "parcelRequire0268")

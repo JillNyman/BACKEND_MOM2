@@ -594,6 +594,7 @@ const inputEnddate = document.getElementById("enddate");
 const inputDescription = document.getElementById("description");
 const addBtn = document.getElementById("addBtn");
 const formEl = document.getElementById("course-form");
+const messageEl = document.getElementById("message");
 //Knapp: lägg till nytt arbete
 addBtn.addEventListener("click", addJob, false);
 //Lägg till arbete, posta till databas
@@ -615,7 +616,17 @@ async function addJob(e) {
         body: JSON.stringify(job)
     });
     let data = await response.json();
-    return data;
+    if (!response.ok) messageEl.innerHTML = "Du m\xe5ste fylla i f\xe4lten f\xf6r <b>f\xf6retagsnamn</b> och <b>titel</b>!";
+    if (response.ok) {
+        inputCompanyname.value = "";
+        inputJobtitle.value = "";
+        inputLocation.value = "";
+        inputStartdate.value = "";
+        inputEnddate.value = "";
+        inputDescription.value = "";
+        messageEl.innerHTML = "Tillagd i listan!";
+        return data;
+    }
 }
 
 },{}]},["aEMIW","eoI2d"], "eoI2d", "parcelRequire0268")
